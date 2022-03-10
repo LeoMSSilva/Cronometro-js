@@ -1,33 +1,54 @@
 function main() {
-    const cronometro = document.querySelector('#cronometro');
-    let segundos = 0;
-    let timer;
-    let statusCor = 0;
-    const setCorDoCronometro = () => statusCor === 0 ? cronometro.classList.remove('vermelho') : cronometro.classList.add('vermelho');
-    const setNomeDoBotao = () => document.querySelector('#iniciar').innerHTML = `${statusCor === 0 ? 'Retonar' : 'parar'}`;
-    const setHoraNoCronometro = () => cronometro.innerHTML = `${new Date(segundos * 1000).toLocaleTimeString('pt-BR', { timeZone: 'UTC' })}`;
+	const chronometer = document.querySelector('#chronometer');
+	const buttonStatus = document.querySelector('#start');
+	const buttons = document.querySelector('#buttons');
+	let seconds = 0;
+	let timer;
+	let statusColor = false;
 
-    const escutar = document.addEventListener('click', (e) => {
-        clearTimeout(timer);
-        if (e.target === iniciar) {
-            setCorDoCronometro();
-            statusCor === 0 ? statusCor = 1 : statusCor = 0;
-            setNomeDoBotao();
-            if (statusCor === 1)
-                timer = setInterval(() => {
-                    segundos++;
-                    setHoraNoCronometro();
-                }, 1000);
-        }
+	const setChronometerColor = () =>
+		statusColor
+			? chronometer.classList.add('red')
+			: chronometer.classList.remove('red');
 
-        if (e.target === zerar) {
-            statusCor = 0;
-            setCorDoCronometro();
-            document.querySelector('#iniciar').innerHTML = 'Iniciar';
-            segundos = 0;
-            setHoraNoCronometro();
-        }
-    });
+	const setButtonName = () =>
+		(buttonStatus.innerHTML = `${statusColor ? 'Parar' : 'Retonar'}`);
+
+	const setTimeOnChronometer = () => {
+		const newChronometer = new Date(seconds * 1000).toLocaleTimeString(
+			'pt-BR',
+			{ timeZone: 'UTC' },
+		);
+		chronometer.innerHTML = `${newChronometer}`;
+	};
+
+	const incrementCounter = () => {
+		timer = setInterval(() => {
+			seconds++;
+			setTimeOnChronometer();
+		}, 1000);
+	};
+
+	const startCounter = () => {
+		setChronometerColor();
+		statusColor = statusColor ? false : true;
+		setButtonName();
+		statusColor && incrementCounter();
+	};
+
+	const resetCounter = () => {
+		statusColor = false;
+		setChronometerColor();
+		buttonStatus.innerHTML = 'Iniciar';
+		seconds = 0;
+		setTimeOnChronometer();
+	};
+
+	buttons.addEventListener('click', (e) => {
+		clearTimeout(timer);
+		if (e.target === start) startCounter();
+		else if (e.target === reset) resetCounter();
+	});
 }
 
 main();
