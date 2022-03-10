@@ -1,42 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-:root{
-    --primary-color: rgb(17, 51, 102);
+:root {
+	--white: #fcfcfc;
+	--white-Opacity: rgba(252, 252, 252, 0.7);
+	--primary-color: #003f9e;
+	--second-color: #4a8ff7;
+	--disable-color: #616c7e;
+	--error: #f74a4a;
 }
 
-*{
-    outline: 0;
-    color: var(--primary-color);
-    font-family: 'Open sans', sans-serif;
-    font-weight: 900;
-    text-align: center;
-    box-sizing: border-box;
+* {
+	outline: 0;
+	color: var(--primary-color);
+	font-family: 'Open sans', sans-serif;
+	font-weight: 900;
+	text-align: center;
+	box-sizing: border-box;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-color);
-    font-size: 3em;
-    line-height: 0.4em;
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary-color);
+	font-size: 3em;
+	line-height: 0.1em;
 }
 
-.container{
-    max-width: 560px;
-    margin: 13.5rem auto;
-    background: #fff;
-    border-radius: 25px;
-    padding: 1rem;
+.container {
+	max-width: 35rem;
+	margin: 13.5rem auto;
+	background-color: var(--white);
+	border-radius: 2rem;
+	padding: 0.005rem 0;
 }
 
-button{
-    border: none;
-    color: #fff;
-    background-color: var(--primary-color);
-    font-size: 0.8em;
-    border-radius: 50px;
-    padding: 1rem;
+.line{
+    height: 0.1rem;
+    width: 100%;
+    background-color: var(--second-color);
 }
 
-.vermelho{
-    color: #ff0000;
+button {
+    width: 13rem;
+    height: 4.25rem;
+	border: none;
+	background-color: var(--primary-color);
+	color: var(--white);
+	border-radius: 2rem;
+	font-size: 0.7em;
+}
+
+.red {
+	color: var(--error);
 }
