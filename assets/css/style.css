@@ -26,22 +26,33 @@ body {
 }
 
 .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	max-width: 35rem;
 	margin: 13.5rem auto;
+	padding: 2rem 0;
 	background-color: var(--white);
 	border-radius: 2rem;
-	padding: 0.005rem 0;
 }
 
-.line{
-    height: 0.1rem;
-    width: 100%;
-    background-color: var(--second-color);
+.line {
+	height: 0.1rem;
+	width: 100%;
+	background-color: var(--second-color);
+}
+
+#buttons {
+	height: 4.25rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
 }
 
 button {
-    width: 13rem;
-    height: 4.25rem;
+	width: 13rem;
+	height: 4.25rem;
 	border: none;
 	background-color: var(--primary-color);
 	color: var(--white);
@@ -51,4 +62,47 @@ button {
 
 .red {
 	color: var(--error);
+}
+
+@media only screen and (max-width: 576px) {
+	body {
+		font-size: 2.2em;
+		line-height: 0.005em;
+	}
+
+	.container {
+		width: 80%;
+		padding: 1rem 0;
+	}
+
+	#buttons {
+		flex-direction: column;
+		justify-content: flex-start;
+		height: 7rem;
+	}
+
+	button {
+		width: 90%;
+		margin-top: 0.5rem;
+		height: 3rem;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	body {
+		font-size: 1.8em;
+		line-height: 0.0025em;
+	}
+
+	.container {
+		padding: 0.75rem 0;
+	}
+
+	#buttons {
+		height: 6rem;
+	}
+
+	button {
+		height: 2.5rem;
+	}
 }
