@@ -15,12 +15,13 @@
 
 # :pushpin: Table of Contents
 
-- :house: [About](#about)
-- :rocket: [Getting Started](##Getting_Started)
-- :computer: [Techs](#Techs)
-- :bust_in_silhouette: [Author](#Author)
-- :handshake: [Contributing](#Contributing)
-- :scroll: [License](#License)
+
+- :house: [About](#house-about)
+- :rocket: [Getting started](#rocket-getting-started)
+- :computer: [Techs](#computer-techs)
+- :bust_in_silhouette: [Author](#bust_in_silhouette-author)
+- :handshake: [Contributing](#handshake-contributing)
+- :scroll: [License](#scroll-license)
 
 ---
 
